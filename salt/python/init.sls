@@ -1,8 +1,10 @@
 zlib:
   pkg.installed:
     - pkgs:
+      - gcc
       - zlib-devel
       - bzip2-devel
+      - openssl-devel
     - refresh: True
 
 python3.4:
@@ -18,11 +20,16 @@ python3.4:
     - unless: which python3.4
 
 pip3:
-  cmd.script:
+  file.managed:
     - name: /tmp/get-pip.py
-    - source: salt://python/get-pip.py
+    - source: https://bootstrap.pypa.io/get-pip.py
+    - skip_verify: True
+
+  cmd.run:
+    - name: '/usr/local/bin/python3 /tmp/get-pip.py'
     - cwd: /tmp/
     - unless: which pip3
+    - reload_modules: True
 
   pip.installed:
     - name: 'psutil'

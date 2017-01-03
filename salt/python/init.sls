@@ -16,7 +16,7 @@ python3.4:
 
   cmd.run:
     - name: '/tmp/Python-3.4.2/configure && make && make install'
-    - cwd: /tmp/
+    - cwd: /tmp/Python-3.4.2/
     - unless: which python3.4
 
 pip3:

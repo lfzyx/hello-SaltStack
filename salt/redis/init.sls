@@ -8,7 +8,7 @@ redis user:
     - home: /var/lib/redis
     - shell: /sbin/nologin
 
-{% for DIR in ['/etc/redis/', '/var/run/redis/', '/var/log/redis/'] %}
+{% for DIR in ['/var/run/redis/', '/var/log/redis/'] %}
 {{ DIR }}:
   file.directory:
     - name: {{ DIR }}
@@ -33,6 +33,7 @@ redis build:
   file.managed:
     - name: /etc/redis/redis.conf
     - source: salt://redis/redis.conf
+    - makedirs: True
     - template: jinja
 
 /etc/init.d/redis:

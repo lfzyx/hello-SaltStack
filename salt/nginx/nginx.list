@@ -1,0 +1,2 @@
+deb http://nginx.org/packages/{{grains['osfullname']|lower}}/ {{grains['oscodename']}} nginx
+deb-src http://nginx.org/packages/{{grains['osfullname']|lower}}/ {{grains['oscodename']}} nginx

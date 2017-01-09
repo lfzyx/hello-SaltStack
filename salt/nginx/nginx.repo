@@ -1,0 +1,5 @@
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/{{grains['osfullname']|lower}}/{{grains['osmajorrelease']}}/$basearch/
+gpgcheck=0
+enabled=1

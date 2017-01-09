@@ -25,7 +25,7 @@ redis build:
     - if_missing: /usr/bin/redis-server
 
   cmd.run:
-    - name: 'cd redis-3.2.6 make && make PREFIX=/usr/ install'
+    - name: 'cd redis-3.2.6 && make && make PREFIX=/usr/ install'
     - unless: which redis-server
     - cwd: /tmp/
 

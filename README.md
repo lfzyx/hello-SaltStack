@@ -6,7 +6,6 @@ include:
 * nginx
 * python
 * redis
-* jre
 * nfs
 * tomcat
 * ...

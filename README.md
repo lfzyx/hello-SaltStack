@@ -15,9 +15,9 @@ Before apply nfs-server or nfs-client , you should perform the following steps
 
 1. Add the following to the pillar file
 <pre>
-1:mine_functions:
-2:  network.ip_addrs:
-3:    - eth0
+> mine_functions:
+>   network.ip_addrs:
+>     - eth0
 </pre>
 
 2. Signal the minion to refresh the pillar data: `salt * saltutil.refresh_pillar`

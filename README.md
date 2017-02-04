@@ -11,7 +11,7 @@ include:
 * tomcat
 * ...
 
-Before apply nfs-server or nfs-client , you should perform the following steps
+> Before apply nfs-server or nfs-client , you should perform the following steps
 
 1. Add the following to the pillar file
 <pre>

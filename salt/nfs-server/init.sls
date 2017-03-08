@@ -22,7 +22,7 @@ Log_directory:
     - mode: 644
     - user: root
     - group: root
-    - source: salt://nfs/files/exports
+    - source: salt://nfs-server/files/exports
     - template: jinja
 
 rpcbind_running:

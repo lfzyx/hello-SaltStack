@@ -1,5 +1,7 @@
 {% for id, eth0_ip in  salt['mine.get'](pillar['minion_ids']+'*','network.ip_addrs').iteritems() %}
+{% if eth0_ip[0] != grains['ip4_interfaces']['eth0'][0] %}
 /opt/Log/ {{ eth0_ip[0] }}(rw,no_subtree_check,async,no_root_squash)
 /opt/DATA/ {{ eth0_ip[0] }}(rw,no_subtree_check,async,no_root_squash)
+{% endif %}
 {% endfor %}
 
